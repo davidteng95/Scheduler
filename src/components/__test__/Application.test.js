@@ -110,7 +110,6 @@ describe("Application", () => {
 
     expect(getByText(day, "2 spots remaining")).toBeInTheDocument();
 
-    // debug();
   });
 
   it("loads data, edits an interview and keeps the spots remaining for Monday the same", async () => {
@@ -138,7 +137,6 @@ describe("Application", () => {
       queryByText(day, "Monday")
     );
     expect(getByText(day, "1 spot remaining")).toBeInTheDocument();
-    // Read the errors because sometimes they say that await cannot be outside of an async function.
   });
 
   it("shows the save error when failing to save an appointment", async() => {
@@ -188,6 +186,5 @@ describe("Application", () => {
     await waitForElement(() => getByText(appointment, "Could not cancel appointment."));
 
     fireEvent.click(getByAltText(appointment, "Close"));
-    debug();
   });
 });
